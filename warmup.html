@@ -10,6 +10,24 @@
 
 <body>
   <script>
+    const setOne = [13, 9, 8, 1, -15, 10, 16, -17, 8, 8, 17, -6, 17, 18]
+
+    const setTwo = ["+13", "9", "+8", "1", "-15", "10", "16", "-17", "8", "8", "17", "-6", "17", "18"]
+
+    const calibrate = dataSet => {
+      return setOne.reduce((acc, curr) => {
+        // return whatever the accumulated value is plus the current valur we are one
+        return acc + curr
+      }, 0)
+    }
+
+    const outputOne = calibrate(setOne) // 87
+
+    console.log(outputOne)
+
+    const outputTwo = calibrate(setTwo) // 87
+
+    console.log(outputTwo)
 
   </script>
 </body>
