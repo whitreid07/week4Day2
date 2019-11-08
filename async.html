@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Async</title>
+</head>
+
+<body>
+  <script>
+    // // Any functionb prefixed with the async keyword will wrap it's return value in a Promise
+    // async function greet() {
+    //   return 'hello!'
+    // }
+
+    // // ^^^Is the same as writing this function:
+
+    // function greet() {
+    //   return new Promise((resolve) => {
+    //     resolve('hello')
+    //   })
+    // }
+
+    // async function cook() {
+    //   const boil = () => new Promise((resolve, reject) => {
+    //     setTimeout((resolve), 2000)
+    //   })
+    //   await boil()
+    //   console.log('DONE!')
+    // }
+
+    // cook()
+
+    // // try {
+    // //   await boil()
+    // // }catch(e) {
+    // //   console.log('Done!!')
+    // // }
+
+    // fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     console.log(data)
+    //   })
+
+    // const getDitto = async () => {
+    //   const res = await fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+    //   const data = await res.json()
+    //   console.log(data)
+    // }
+
+    const getDitto = async () => {
+      const ditto = fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+      const pikachu = fetch('https://pokeapi.co/api/v2/pokemon/pikachu')
+      await Promise.all([ditto, pikachu])
+    }
+
+    getDitto()
+  </script>
+</body>
+
+</html>
