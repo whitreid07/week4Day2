@@ -14,18 +14,18 @@
 
     const setTwo = ["+13", "9", "+8", "1", "-15", "10", "16", "-17", "8", "8", "17", "-6", "17", "18"]
 
-    const calibrate = dataSet => {
+    const calibrate = (dataSet, initalValue) => {
       return setOne.reduce((acc, curr) => {
         // return whatever the accumulated value is plus the current valur we are one
-        return acc + curr
-      }, 0)
+        return acc + parse(curr)
+      }, initalValue)
     }
 
-    const outputOne = calibrate(setOne) // 87
+    const outputOne = calibrate(setOne, 10) // 97
 
     console.log(outputOne)
 
-    const outputTwo = calibrate(setTwo) // 87
+    const outputTwo = calibrate(setTwo, 20) // 107
 
     console.log(outputTwo)
 

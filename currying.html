@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Currying</title>
+</head>
+
+<body>
+  <script>
+    // A curried function is a function that has ONE parameter (arity of 1) and keeps returning a funnction until eventually it produces a value
+
+    const dragon = (name, size, element) => {
+      return `${name} is a ${size} dragon that breathes ${element}!`
+    }
+
+    const myDragon = dragon('toothless', 'tall', 'ice')
+
+    console.log(myDragon)
+
+    // dragon, but curried
+    const curriedDragon = (name) => {
+      return (size) => {
+        return (element) => {
+          return `${name} is a ${size} dragon that breathes ${element}!`
+        }
+      }
+    }
+
+    const myCurriedDragon = curriedDragon('pedro')('small')('glitter')
+    console.log(myCurriedDragon)
+  </script>
+</body>
+
+</html>
